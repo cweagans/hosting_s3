@@ -619,7 +619,7 @@ class Provision_Service_s3 extends Provision_Service {
    */
   function suggest_bucket_name() {
     $client = $this->client_factory();
-    $suggest_base = str_replace('.', '-', gethostname() . '-' . d()->uri);
+    $suggest_base = str_replace('.', '-', d()->uri);
 
     if (!$client->doesBucketExist($suggest_base)) {
       return $suggest_base;
